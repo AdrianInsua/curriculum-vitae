@@ -1,0 +1,99 @@
+.cover__container {
+  --border-radius: 6px;
+
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  .links {
+    position: absolute;
+    right: var(--padding--m);
+    align-self: center;
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: var(--padding--s);
+    margin: var(--padding--m);
+    align-content: center;
+
+    .link {
+      cursor: pointer;
+      opacity: 0.5;
+      position: relative;
+
+      img {
+        width: var(--font-size--big-icon);
+      }
+      .link--name {
+        position: absolute;
+        right: 0;
+        top: 1px;
+        margin-right: calc(var(--padding--m) + var(--font-size--big-icon));
+        opacity: 0;
+        white-space: nowrap;
+        background: var(--color--lighter);
+        padding: var(--padding--xs) var(--padding--m);
+        border-radius: 4px;
+        transition: all ease-in 100ms;
+      }
+      &:hover {
+        opacity: 1;
+
+        .link--name {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .avatar__container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-bottom: var(--padding--xl);
+
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(
+        207deg,
+        rgba(121, 9, 84, 1) 0%,
+        rgba(0, 157, 255, 1) 100%
+      );
+    }
+    .avatar__wrapper {
+      width: calc(
+        100% - calc(var(--border-radius) * 2) - var(--padding--xxs) * 2
+      );
+      height: calc(
+        100% - calc(var(--border-radius) * 2) - var(--padding--xxs) * 2
+      );
+      top: var(--padding--xxs);
+      left: var(--padding--xxs);
+      position: absolute;
+      border-radius: 100%;
+      overflow: hidden;
+      z-index: 1;
+      border: var(--border-radius) solid var(--color--background);
+
+      img {
+        height: 100%;
+        left: 0;
+      }
+    }
+  }
+  .go-to {
+    position: absolute;
+    bottom: var(--padding--xl);
+    cursor: pointer;
+    font-style: italic;
+
+    p {
+      margin-bottom: var(--padding--xs);
+    }
+  }
+}

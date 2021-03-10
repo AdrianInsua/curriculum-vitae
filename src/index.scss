@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
 
 @import './theme.scss';
 @import './global/flex';
@@ -12,4 +12,13 @@ body {
     font-size: var(--font-size--l);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    margin: 0;
+    margin-bottom: var(--padding--m);
+}
+h4 {
+    font-size: var(--font-size--xl);
+    font-weight: var(--font-weight--normal);
+    color: var(--color--medium);
 }
