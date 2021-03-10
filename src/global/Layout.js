@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Layout.scss";
 
-import cls from "./utils";
+import { cls } from "./utils";
 
 export const distributions = {
   SPACED: "spaced",
