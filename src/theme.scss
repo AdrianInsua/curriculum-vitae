@@ -20,7 +20,8 @@
     --font-size--xl: 16px;
     --font-size--xxl: 18px;
     --font-size--xxxl: 24px;
-    --font-size--huge: 48px;
+    --font-size--huge: 31px;
+    --font-size--title: 38px;
     --font-size--big-icon: 38px;
 }
 
@@ -35,6 +36,7 @@
     --border--light: 1px solid var(--color--light);
     --border--lighter: 1px solid var(--color--lighter);
     --border--dark: 1px solid var(--color--contrast);
+    --border--blue: 1px solid var(--color--secondary--dark);
 }
 
 :root {
@@ -46,5 +48,9 @@
     --color--lighter: #DFDFDF;
     --color--contrast: black;
     --color--dark: #2D2D2D;
+    --color--secondary: #e7f1f8;
+    --color--secondary--dark: #044676;
+    --color--third: #db43ec;
+    --color--third--dark: #b543c1; 
 }
 

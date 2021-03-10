@@ -1,24 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
 
-@import './theme.scss';
-@import './global/flex';
-@import './global/animated';
+@import "./theme.scss";
+@import "./global/flex";
+@import "./global/animated";
 
 body {
-    margin: 0;
-    font-family: Open Sans,sans-serif;
-    color: var(--font-color);
-    font-size: var(--font-size--l);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: Open Sans, sans-serif;
+  color: var(--font-color);
+  font-size: var(--font-size--m);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+::-webkit-scrollbar {
+  display: none;
 }
 h1 {
-    margin: 0;
-    margin-bottom: var(--padding--m);
+  margin: 0;
+  margin-bottom: var(--padding--m);
+  font-size: var(--font-size--huge);
+
+  &.title {
+    font-size: var(--font-size--title);
+    font-weight: var(--font-weight--normal);
+  }
+}
+h2 {
+  font-size: var(--font-size--xxl);
 }
 h4 {
-    font-size: var(--font-size--xl);
-    font-weight: var(--font-weight--normal);
-    color: var(--color--medium);
+  font-size: var(--font-size--l);
+  font-weight: var(--font-weight--normal);
+  color: var(--color--medium);
 }

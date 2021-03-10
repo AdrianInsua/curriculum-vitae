@@ -7,11 +7,11 @@
 
   .links {
     position: absolute;
-    right: var(--padding--m);
+    right: var(--padding--xxl);
     align-self: center;
     display: grid;
     grid-auto-flow: row;
-    grid-row-gap: var(--padding--s);
+    grid-row-gap: var(--padding--m);
     margin: var(--padding--m);
     align-content: center;
 
@@ -26,7 +26,6 @@
       .link--name {
         position: absolute;
         right: 0;
-        top: 1px;
         margin-right: calc(var(--padding--m) + var(--font-size--big-icon));
         opacity: 0;
         white-space: nowrap;
@@ -90,6 +89,7 @@
     position: absolute;
     bottom: var(--padding--xl);
     cursor: pointer;
+    text-align: center;
     font-style: italic;
 
     p {
