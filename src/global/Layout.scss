@@ -1,0 +1,59 @@
+.padding--big {
+    padding: var(--padding--xxl);
+}
+.padding--big--vertical {
+    padding-top: var(--padding--xxl);
+    padding-bottom: var(--padding--xxl);
+}
+.padding--big--horizontal {
+    padding-right: var(--padding--xxl);
+    padding-left: var(--padding--xxl);
+}
+
+.padding--large {
+    padding: var(--padding--l);
+}
+.padding--large--vertical {
+    padding-top: var(--padding--xl);
+    padding-bottom: var(--padding--xl);
+}
+.padding--large--horizontal {
+    padding-right: var(--padding--xl);
+    padding-left: var(--padding--xl);
+}
+
+.padding--medium {
+    padding: var(--padding--m);
+}
+.padding--medium--vertical {
+    padding-top: var(--padding--m);
+    padding-bottom: var(--padding--m);
+}
+.padding--medium--horizontal {
+    padding-right: var(--padding--m);
+    padding-left: var(--padding--m);
+}
+
+.padding--small {
+    padding: var(--padding--s);
+}
+.padding--small--vertical {
+    padding-top: var(--padding--s);
+    padding-bottom: var(--padding--s);
+}
+.padding--small--horizontal {
+    padding-right: var(--padding--s);
+    padding-left: var(--padding--s);
+}
+
+.padding--tiny {
+    padding: var(--padding--xs);
+}
+.padding--tiny--vertical {
+    padding-top: var(--padding--xs);
+    padding-bottom: var(--padding--xs);
+}
+.padding--tiny--horizontal {
+    padding-right: var(--padding--xs);
+    padding-left: var(--padding--xs);
+}
