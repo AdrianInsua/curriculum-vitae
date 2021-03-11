@@ -1,5 +1,6 @@
 menu {
   --dot-size: 20px;
+  --transition: 100ms;
 
   .links {
     display: grid;
@@ -17,7 +18,7 @@ menu {
         height: var(--dot-size);
         border-radius: 100%;
         background: var(--color--contrast);
-        transition: all linear 300ms;
+        transition: all linear var(--transition);
 
         &.active {
           background: var(--color--third);
@@ -25,7 +26,7 @@ menu {
       }
 
       img {
-        transition: all linear 300ms;
+        transition: all linear var(--transition);
         width: var(--font-size--big-icon);
       }
       .link--name {
@@ -49,8 +50,8 @@ menu {
     }
   }
 
-  &.scrolled {
-    .links:not(:hover) {
+  &.scrolled:not(:hover) {
+    .links {
       --dot-size: 5px;
       .link {
         .link--name {
