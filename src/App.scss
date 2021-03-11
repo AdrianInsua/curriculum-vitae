@@ -1,4 +1,13 @@
 .app__container {
   padding: 0 var(--padding--xl);
 }
+menu {
+  position: fixed;
+  right: 0;
+  padding: 0 var(--padding--l);
+  align-self: center;
+  display: flex;
+  height: 100vh;
+  z-index: 1;
+}
 

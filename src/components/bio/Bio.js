@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { ColumnLayout, RowLayout } from "../../global/Layout";
 import { range } from "../../global/utils";
 import {
@@ -10,22 +10,16 @@ import {
 import PropTypes from "prop-types";
 import "./Bio.scss";
 
-function Bio({ scrollThreshold }) {
+function Bio({ scrollThreshold, scroll }) {
   const [translate, setTranslate] = useState(-500);
   const userData = getBasicUserData();
   const hobbies = getHobbies();
   const skills = getSkills();
   const languages = getLanguages();
 
-  const _handleScroll = useCallback(() => {
-    setTranslate(window.pageYOffset - scrollThreshold);
-  }, [scrollThreshold]);
-
   useEffect(() => {
-    window.addEventListener("scroll", _handleScroll);
-
-    return () => window.removeEventListener("scroll", _handleScroll);
-  }, [_handleScroll]);
+    setTranslate(scroll - scrollThreshold);
+  }, [scroll, scrollThreshold]);
 
   const _getAvatarTranslate = () => {
     return Math.min(translate, 0);
@@ -169,6 +163,7 @@ function Bio({ scrollThreshold }) {
   return (
     <div
       className="bio__container"
+      id="bio"
       style={{
         "--translate": `${_getAvatarTranslate()}px`,
         "--translate--about": `${_getAboutTranslate()}px`,
@@ -189,10 +184,12 @@ function Bio({ scrollThreshold }) {
 
 const propTypes = {
   scrollThreshold: PropTypes.number,
+  scroll: PropTypes.number,
 };
 
 const defaultProps = {
   scrollThreshold: 0,
+  scroll: 0,
 };
 
 Bio.propTypes = propTypes;
