@@ -1,0 +1,65 @@
+menu {
+  --dot-size: 20px;
+
+  .links {
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: var(--padding--m);
+    align-content: center;
+
+    .link {
+      cursor: pointer;
+      opacity: 0.5;
+      position: relative;
+
+      .dot {
+        width: var(--dot-size);
+        height: var(--dot-size);
+        border-radius: 100%;
+        background: var(--color--contrast);
+        transition: all linear 300ms;
+
+        &.active {
+          background: var(--color--third);
+        }
+      }
+
+      img {
+        transition: all linear 300ms;
+        width: var(--font-size--big-icon);
+      }
+      .link--name {
+        position: absolute;
+        right: 0;
+        margin-right: calc(var(--padding--m) + var(--font-size--big-icon));
+        opacity: 0;
+        white-space: nowrap;
+        background: var(--color--lighter);
+        padding: var(--padding--xs) var(--padding--m);
+        border-radius: 4px;
+        transition: all ease-in 100ms;
+      }
+      &:hover {
+        opacity: 1;
+
+        .link--name {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.scrolled {
+    .links:not(:hover) {
+      --dot-size: 5px;
+      .link {
+        .link--name {
+          display: none;
+        }
+        img {
+          width: 10px;
+        }
+      }
+    }
+  }
+}

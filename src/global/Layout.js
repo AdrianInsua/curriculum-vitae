@@ -37,6 +37,7 @@ export const RowLayout = ({
   testId,
   distribution,
   className,
+  id,
   padding,
   verticalPadding,
   horizontalPadding,
@@ -54,6 +55,7 @@ export const RowLayout = ({
       horizontalPadding
     )}
     onClick={onClick}
+    id={id}
   >
     {children}
   </div>
@@ -63,6 +65,7 @@ export const ColumnLayout = ({
   testId,
   distribution,
   className,
+  id,
   padding,
   verticalPadding,
   horizontalPadding,
@@ -80,6 +83,7 @@ export const ColumnLayout = ({
       horizontalPadding
     )}
     onClick={onClick}
+    id={id}
   >
     {children}
   </div>
@@ -92,6 +96,7 @@ const propTypes = {
     PropTypes.string,
   ]),
   className: PropTypes.string,
+  id: PropTypes.string,
   padding: PropTypes.string,
   verticalPadding: PropTypes.string,
   horizontalPadding: PropTypes.string,
@@ -106,6 +111,7 @@ const defaultProps = {
   testId: "",
   distribution: null,
   className: null,
+  id: null,
   padding: null,
   verticalPadding: null,
   horizontalPadding: null,
