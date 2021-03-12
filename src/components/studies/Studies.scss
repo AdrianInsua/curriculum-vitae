@@ -1,0 +1,90 @@
+.studies__wrapper {
+  --card--width: 350px;
+  --card--radius: 8px;
+
+  min-height: 300vh;
+  background: var(--color--secondary);
+  margin-left: calc(var(--padding--xl) * -1);
+  width: 100%;
+  padding: 0 var(--padding--xl);
+  position: relative;
+
+  .studies__container {
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+
+    .study__container {
+      position: relative;
+      width: var(--container--width);
+      height: 437px;
+      margin: 0 auto;
+      padding-left: var(--card--width);
+      align-self: center;
+      overflow: hidden;
+      transform: translateY(var(--translate));
+      transition: all linear 300ms;
+
+      .study--cover {
+        left: 0;
+        width: var(--card--width);
+        height: 100%;
+        background-size: cover;
+        position: absolute;
+        overflow:hidden;
+        border-radius: var(--card--radius);
+        z-index: 1;
+
+
+        .title {
+          position: absolute;
+          top:0;
+          left:0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0,0,0,.4);
+          color: var(--font-color--contrast);
+          transform: translateY(var(--translate--title));
+          transition: all linear 300ms;
+
+          h1 {
+            font-weight: var(--font-weight--bolder);
+          }
+        }
+      }
+      .study--card__container {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: calc(100% - var(--card--width) - var(--padding--xl));
+        min-width: calc(
+          calc(var(--card--width) * var(--studies)) +
+            calc(var(--padding--l) * var(--studies))
+        );
+
+        .study--card {
+          border: 1px solid var(--color--secondary--dark);
+          border-radius: var(--card--radius);
+          width: calc(var(--card--width) - var(--padding--m) * 2);
+          padding: var(--padding--m);
+          background: #0446760a;
+          opacity: var(--opacity);
+          transition: all linear 300ms;
+
+          h3, h4 {
+            color: var(--color--secondary--dark);
+          }
+          h4,
+          .caption {
+            margin: var(--padding--xxxs) 0;
+          }
+          h4 {
+            font-weight: var(--font-weight--normal);
+          }
+        }
+      }
+    }
+  }
+}

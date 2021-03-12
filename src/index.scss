@@ -19,18 +19,20 @@ body {
 h1 {
   margin: 0;
   margin-bottom: var(--padding--m);
-  font-size: var(--font-size--huge);
-
-  &.title {
-    font-size: var(--font-size--title);
-    font-weight: var(--font-weight--normal);
-  }
+  font-size: var(--font-size--title);
+  font-weight: var(--font-weight--normal);
 }
 h2 {
+  font-size: var(--font-size--huge);
+}
+h3 {
   font-size: var(--font-size--xxl);
 }
 h4 {
   font-size: var(--font-size--l);
   font-weight: var(--font-weight--normal);
   color: var(--color--medium);
+}
+.caption {
+  color:var(--color--medium);
 }
