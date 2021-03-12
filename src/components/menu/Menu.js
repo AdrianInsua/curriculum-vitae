@@ -3,9 +3,11 @@ import { distributions, RowLayout } from "../../global/Layout";
 import { HashLink } from "react-router-hash-link";
 import PropTypes from "prop-types";
 import "./Menu.scss";
+import { useSelector } from "react-redux";
 
 function Menu({ scroll }) {
   const [translate, setTranslate] = useState(0);
+  const scrollConfig = useSelector((state) => state.scroll);
 
   useEffect(() => {
     setTranslate(scroll);
@@ -13,6 +15,13 @@ function Menu({ scroll }) {
 
   const _isScrolled = () => {
     return translate > window.innerHeight / 2;
+  };
+
+  const _isPageActive = (page) => {
+    const top = scrollConfig[page]?.top - 200;
+    const bottom = top + scrollConfig[page]?.rect.height;
+
+    return translate >= top && translate < bottom;
   };
 
   const _renderLink = (svg, text, link) => {
@@ -49,7 +58,10 @@ function Menu({ scroll }) {
     return (
       <section className="links">
         {_isScrolled() && _renderSectionLink(false, "Home", "home")}
-        {_isScrolled() && _renderSectionLink(_isScrolled(), "Sobre mi", "bio")}
+        {_isScrolled() &&
+          _renderSectionLink(_isPageActive("bio"), "Sobre mi", "bio")}
+        {_isScrolled() &&
+          _renderSectionLink(_isPageActive("studies"), "Estudios", "studies")}
         {_renderLink(
           "gmail",
           "Contactame por correo!",

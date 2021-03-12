@@ -3,7 +3,11 @@ import "./Cover.scss";
 
 function Cover() {
   const _handleClick = () => {
-    window.scroll({ top: window.innerHeight, left: 0, behavior: "smooth" });
+    window.scroll({
+      top: window.innerHeight + 64,
+      left: 0,
+      behavior: "smooth",
+    });
   };
 
   const _renderAvatar = () => {

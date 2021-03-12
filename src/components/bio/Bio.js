@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ColumnLayout, RowLayout } from "../../global/Layout";
 import { range } from "../../global/utils";
 import {
@@ -8,25 +8,37 @@ import {
   getSkills,
 } from "../../services/user.service";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import actions from "../../global/store/actions";
 import "./Bio.scss";
 
-function Bio({ scrollThreshold, scroll }) {
+function Bio({ scroll }) {
   const [translate, setTranslate] = useState(-500);
+  const dispatch = useDispatch();
+  const ref = useRef();
   const userData = getBasicUserData();
   const hobbies = getHobbies();
   const skills = getSkills();
   const languages = getLanguages();
 
   useEffect(() => {
-    setTranslate(scroll - scrollThreshold);
-  }, [scroll, scrollThreshold]);
+    setTranslate(scroll - ref.current.offsetTop / 2);
+  }, [scroll]);
+
+  useEffect(() => {
+    const config = {
+      rect: ref.current.getBoundingClientRect(),
+      top: ref.current.offsetTop,
+    };
+    dispatch(actions.scroll.updateComponentPosition("bio", config));
+  }, [dispatch]);
 
   const _getAvatarTranslate = () => {
     return Math.min(translate, 0);
   };
 
   const _getAboutTranslate = () => {
-    return Math.max(translate * -1, 0);
+    return range(-300, 300, 500, 0, translate);
   };
 
   const _getAboutOpacity = () => {
@@ -34,7 +46,7 @@ function Bio({ scrollThreshold, scroll }) {
   };
 
   const _showName = () => {
-    const nameThreshold = scrollThreshold / -2;
+    const nameThreshold = ref.current?.offsetTop / -2;
     return translate > nameThreshold;
   };
 
@@ -45,7 +57,7 @@ function Bio({ scrollThreshold, scroll }) {
   const _renderBasicInfo = () => {
     return (
       <ColumnLayout className="animated fadeInUp">
-        <h1>Adrián Insua Yañez</h1>
+        <h2>Adrián Insua Yañez</h2>
         <ColumnLayout className="sidebar__info">
           <table>
             <tbody>
@@ -67,7 +79,7 @@ function Bio({ scrollThreshold, scroll }) {
   const _renderHobbies = () => {
     return (
       <ColumnLayout className="animated fadeInUp hobbies">
-        <h2>AFICCIONES</h2>
+        <h3>AFICCIONES</h3>
         <div className="hobbies__container">
           {hobbies.map((hobbie) => (
             <div key={hobbie} className="chip chip--hobbie">
@@ -92,8 +104,7 @@ function Bio({ scrollThreshold, scroll }) {
   const _renderAbout = () => {
     return (
       <ColumnLayout className="about">
-        <div className="decorator"></div>
-        <h2>Sobre mí</h2>
+        <h1 className="title">Sobre mí</h1>
         <div className="about__content">
           <p>
             Soy una persona a la que le gustan los <b>retos</b>, y{" "}
@@ -115,7 +126,7 @@ function Bio({ scrollThreshold, scroll }) {
     return (
       <ColumnLayout className="skills">
         <div className="decorator"></div>
-        <h2>Aptitudes</h2>
+        <h3>Aptitudes</h3>
         <p>
           A lo largo de mis años de trabajo y estudio he desarrollado
           habilidades en diversos campos, relacionados tanto con materia de{" "}
@@ -142,7 +153,7 @@ function Bio({ scrollThreshold, scroll }) {
     return (
       <ColumnLayout className="languages">
         <div className="decorator"></div>
-        <h2>Idiomas</h2>
+        <h3>Idiomas</h3>
         <div className="languages__content">
           {languages.map((language) => (
             <div className="language__container" key={language.title}>
@@ -164,6 +175,7 @@ function Bio({ scrollThreshold, scroll }) {
     <div
       className="bio__container"
       id="bio"
+      ref={ref}
       style={{
         "--translate": `${_getAvatarTranslate()}px`,
         "--translate--about": `${_getAboutTranslate()}px`,
@@ -183,12 +195,10 @@ function Bio({ scrollThreshold, scroll }) {
 }
 
 const propTypes = {
-  scrollThreshold: PropTypes.number,
   scroll: PropTypes.number,
 };
 
 const defaultProps = {
-  scrollThreshold: 0,
   scroll: 0,
 };
 

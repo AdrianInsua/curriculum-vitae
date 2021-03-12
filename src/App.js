@@ -3,9 +3,9 @@ import "./App.scss";
 import Bio from "./components/bio/Bio";
 import Menu from "./components/menu/Menu";
 import { useCallback, useEffect, useState } from "react";
+import Studies from "./components/studies/Studies";
 
 function App() {
-  const height = window.innerHeight;
   const [scroll, setScroll] = useState(0);
 
   const _handleScroll = useCallback(() => {
@@ -22,7 +22,8 @@ function App() {
     <div className="app__container">
       <Menu scroll={scroll} />
       <Cover />
-      <Bio scrollThreshold={height} scroll={scroll} />
+      <Bio scroll={scroll} />
+      <Studies scroll={scroll} />
     </div>
   );
 }
