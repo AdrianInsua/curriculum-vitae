@@ -73,9 +73,9 @@ function Menu({ scroll }) {
           "https://github.com/AdrianInsua"
         )}
         {_renderLink(
-          "docs",
-          "Mi curriculum en Google Docs!",
-          "https://docs.google.com/document/d/1TlOTO3FJ8jVSrSRPAUxsXlxNSI-8M1UKqqP_zYIrFRY/edit?usp=sharing"
+          "linkedin",
+          "Búscame en LinkedIn!",
+          "https://www.linkedin.com/in/adrián-insua-yañez-952875121/"
         )}
       </section>
     );

@@ -10,7 +10,7 @@ export const getBasicUserData = () => {
     },
     {
       title: "Residencia actual",
-      value: "A Coruña",
+      value: "Vilalba (Lugo)",
     },
     {
       title: "Dirección actual",
@@ -56,11 +56,16 @@ export const getSkills = () => {
     "Angular",
     "React",
     "Vue",
+    "Figma",
     "Microservicios",
     "Koa",
     "WebSockets",
     "ScikitLearn",
     "DeepLearning",
+    "Jira",
+    "Github",
+    "SQL",
+    "UI/UX",
   ];
 };
 
