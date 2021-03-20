@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/AdrianInsua/curriculum-vitae/compare/v1.1.0...v1.2.0) (2021-03-20)
+
+
+### Features
+
+* **bio:** improve bio UI ([#19](https://github.com/AdrianInsua/curriculum-vitae/issues/19)) ([db7cf73](https://github.com/AdrianInsua/curriculum-vitae/commit/db7cf73f565d1d4cfad07ab050de73b59f8892ac))
+
 # [1.1.0](https://github.com/AdrianInsua/curriculum-vitae/compare/v1.0.0...v1.1.0) (2021-03-12)
 
 
