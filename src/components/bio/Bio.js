@@ -56,22 +56,19 @@ function Bio({ scroll }) {
 
   const _renderBasicInfo = () => {
     return (
-      <ColumnLayout className="animated fadeInUp">
-        <h2>Adrián Insua Yañez</h2>
-        <ColumnLayout className="sidebar__info">
-          <table>
-            <tbody>
-              {userData.map((row) => (
-                <tr key={row.title}>
-                  <td>{row.title}</td>
-                  <td>
-                    <span>{row.value}</span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </ColumnLayout>
+      <ColumnLayout className="animated fadeInUp sidebar__info">
+        <table>
+          <tbody>
+            {userData.map((row) => (
+              <tr key={row.title}>
+                <td>{row.title}</td>
+                <td>
+                  <span>{row.value}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </ColumnLayout>
     );
   };
@@ -101,10 +98,23 @@ function Bio({ scroll }) {
     );
   };
 
-  const _renderAbout = () => {
+  const _renderInfo = () => {
     return (
       <ColumnLayout className="about">
-        <h1 className="title">Sobre mí</h1>
+        <h1 className="title">Adrián Insua Yañez</h1>
+        <RowLayout>
+          {_renderAbout()}
+          {_renderSkills()}
+        </RowLayout>
+      </ColumnLayout>
+    );
+  };
+
+  const _renderAbout = () => {
+    return (
+      <ColumnLayout>
+        <div className="decorator"></div>
+        <h3>Sobre mi</h3>
         <div className="about__content">
           <p>
             Soy una persona a la que le gustan los <b>retos</b>, y{" "}
@@ -138,6 +148,15 @@ function Bio({ scroll }) {
           desarrollo de software, sobre todo en lo relacionado con el desarrollo
           de <b>front-ends</b> utilizando un amplio abanico de tecnologías.
         </p>
+      </ColumnLayout>
+    );
+  };
+
+  const _renderKnowledge = () => {
+    return (
+      <ColumnLayout className="knowledge">
+        <div className="decorator"></div>
+        <h3>Conocimientos</h3>
         <div className="skills__content">
           {skills.map((skill) => (
             <div key={skill} className="chip chip--skill animated zoomIn">
@@ -185,8 +204,8 @@ function Bio({ scroll }) {
       <RowLayout>
         {_renderSidebar()}
         <ColumnLayout>
-          {_renderAbout()}
-          {_renderSkills()}
+          {_renderInfo()}
+          {_renderKnowledge()}
           {_renderLanguages()}
         </ColumnLayout>
       </RowLayout>

@@ -40,10 +40,7 @@
     }
 
     .hobbies {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      margin-bottom: var(--padding--xl);
+      margin-top: var(--padding--xxxl);
 
       .hobbies__container {
         display: grid;
@@ -56,7 +53,9 @@
   }
   .about,
   .skills,
+  .knowledge,
   .languages {
+    text-align: justify;
     margin: var(--padding--m) var(--padding--xl);
     margin-top: var(--padding--xxxl);
     transform: translateY(var(--translate--about));
@@ -68,10 +67,14 @@
     margin-top: var(--padding--m);
   }
   .skills {
+    margin: 0 0 0 var(--padding--xxxl);
+
     p {
       font-size: var(--font-size--l);
     }
 
+  }
+  .knowledge {
     .skills__content {
       margin-top: var(--padding--m);
       display: grid;
