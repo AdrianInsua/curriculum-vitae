@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/AdrianInsua/curriculum-vitae/compare/v1.3.0...v1.4.0) (2021-03-21)
+
+
+### Features
+
+* **components:** add certs component and minor style fixes ([#22](https://github.com/AdrianInsua/curriculum-vitae/issues/22)) ([adf130e](https://github.com/AdrianInsua/curriculum-vitae/commit/adf130e452ad35737975b1e7178c7d124de7801a))
+
 # [1.3.0](https://github.com/AdrianInsua/curriculum-vitae/compare/v1.2.0...v1.3.0) (2021-03-21)
 
 
