@@ -4,6 +4,7 @@ import Bio from "./components/bio/Bio";
 import Menu from "./components/menu/Menu";
 import { useCallback, useEffect, useState } from "react";
 import Studies from "./components/studies/Studies";
+import Work from "./components/work/Work";
 
 function App() {
   const [scroll, setScroll] = useState(0);
@@ -24,6 +25,7 @@ function App() {
       <Cover />
       <Bio scroll={scroll} />
       <Studies scroll={scroll} />
+      <Work scroll={scroll} />
     </div>
   );
 }

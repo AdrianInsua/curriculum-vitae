@@ -1,5 +1,5 @@
 .studies__wrapper {
-  --card--width: 350px;
+  --card--width: 19vw;
   --card--radius: 8px;
 
   min-height: 300vh;
@@ -25,7 +25,7 @@
       align-self: center;
       overflow: hidden;
       transform: translateY(var(--translate));
-      transition: all linear 300ms;
+      transition: all linear 500ms;
 
       .study--cover {
         left: 0;
