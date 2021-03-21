@@ -41,6 +41,7 @@ export const getHobbies = () => {
     "Cocina",
     "Podcasts",
     "Humor",
+    "Juegos",
   ];
 };
 

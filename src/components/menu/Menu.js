@@ -64,6 +64,8 @@ function Menu({ scroll }) {
           _renderSectionLink(_isPageActive("studies"), "Estudios", "studies")}
         {_isScrolled() &&
           _renderSectionLink(_isPageActive("work"), "Trabajos", "work")}
+        {_isScrolled() &&
+          _renderSectionLink(_isPageActive("certs"), "Certificados", "certs")}
         {_renderLink(
           "gmail",
           "Contactame por correo!",
