@@ -59,7 +59,7 @@ function Studies({ scroll }) {
 
   const _renderStudyCard = (study) => {
     return (
-      <div key={study.title} className="study--card">
+      <div key={study.title} className="study--card column middle">
         <ColumnLayout>
           <h3>{study.title}</h3>
           <h4>{study.institution}</h4>
