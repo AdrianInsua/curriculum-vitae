@@ -27,12 +27,17 @@ function Studies({ scroll }) {
 
   const _getStudiesTranslate = () => {
     if (translate < window.innerHeight) {
-      const threshold = (window.innerHeight / -2) * 1.7;
-      return range(threshold, 0, window.innerHeight, 0, translate);
+      return range(
+        window.innerHeight * -0.7,
+        0,
+        window.innerHeight,
+        0,
+        translate
+      );
     } else {
       return range(
-        window.innerHeight,
-        window.innerHeight * 2,
+        window.innerHeight + 500,
+        window.innerHeight * 2.2,
         0,
         window.innerHeight * -1,
         translate
@@ -80,7 +85,10 @@ function Studies({ scroll }) {
       <div
         className="studies__container"
         style={{
-          position: translate > 0 ? "fixed" : "relative",
+          position:
+            translate > 0 && translate < window.innerHeight * 2.5
+              ? "fixed"
+              : "relative",
         }}
       >
         <RowLayout className="study__container">
