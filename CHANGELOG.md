@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AdrianInsua/curriculum-vitae/compare/v1.2.0...v1.3.0) (2021-03-21)
+
+
+### Features
+
+* **components:** add experience component ([690a7db](https://github.com/AdrianInsua/curriculum-vitae/commit/690a7db9f2b7dd90a0ac9b91d1a2b2893e2f0078)), closes [#9](https://github.com/AdrianInsua/curriculum-vitae/issues/9) [#7](https://github.com/AdrianInsua/curriculum-vitae/issues/7) [#11](https://github.com/AdrianInsua/curriculum-vitae/issues/11) [#13](https://github.com/AdrianInsua/curriculum-vitae/issues/13) [#19](https://github.com/AdrianInsua/curriculum-vitae/issues/19) [#19](https://github.com/AdrianInsua/curriculum-vitae/issues/19)
+
 # [1.2.0](https://github.com/AdrianInsua/curriculum-vitae/compare/v1.1.0...v1.2.0) (2021-03-20)
 
 
