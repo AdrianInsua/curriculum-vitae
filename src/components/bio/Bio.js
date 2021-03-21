@@ -51,7 +51,15 @@ function Bio({ scroll }) {
   };
 
   const _showHobbies = () => {
-    return translate > -100;
+    return translate > 400;
+  };
+
+  const _showSkills = () => {
+    return translate > 170;
+  };
+
+  const _showLanguages = () => {
+    return translate > 300;
   };
 
   const _renderBasicInfo = () => {
@@ -175,7 +183,10 @@ function Bio({ scroll }) {
         <h3>Idiomas</h3>
         <div className="languages__content">
           {languages.map((language) => (
-            <div className="language__container" key={language.title}>
+            <div
+              className="language__container animated fadeInUp"
+              key={language.title}
+            >
               <h4>{language.title}</h4>
               <div className="language--bar">
                 <div
@@ -205,8 +216,8 @@ function Bio({ scroll }) {
         {_renderSidebar()}
         <ColumnLayout>
           {_renderInfo()}
-          {_renderKnowledge()}
-          {_renderLanguages()}
+          {_showSkills() && _renderKnowledge()}
+          {_showLanguages() && _renderLanguages()}
         </ColumnLayout>
       </RowLayout>
     </div>
