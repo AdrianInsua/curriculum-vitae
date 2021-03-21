@@ -1,4 +1,5 @@
 import { ColumnLayout, distributions } from "../../global/Layout";
+import Avatar from "../avatar/Avatar";
 import "./Cover.scss";
 
 function Cover() {
@@ -8,20 +9,6 @@ function Cover() {
       left: 0,
       behavior: "smooth",
     });
-  };
-
-  const _renderAvatar = () => {
-    return (
-      <div className="avatar__container animated zoomIn">
-        <div className="avatar__wrapper">
-          <img
-            src={process.env.PUBLIC_URL + "/images/avatar.jpg"}
-            alt="avatar"
-          />
-        </div>
-        <div className="circle"></div>
-      </div>
-    );
   };
 
   const _renderGoTo = () => {
@@ -39,7 +26,7 @@ function Cover() {
       id="home"
       distribution={[distributions.CENTER, distributions.MIDDLE]}
     >
-      {_renderAvatar()}
+      <Avatar />
       <h1 className="title">Adrián Insua Yañez</h1>
       <h4>Curriculum Vitae</h4>
       {_renderGoTo()}

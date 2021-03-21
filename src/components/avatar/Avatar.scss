@@ -1,0 +1,40 @@
+.avatar__container {
+  --border-radius: 6px;
+  --avatar-width: 300px;
+  position: relative;
+  width: var(--avatar-width);
+  height: var(--avatar-width);
+  border-radius: 100%;
+  overflow: hidden;
+  margin-bottom: var(--padding--xl);
+
+  .circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+      207deg,
+      var(--color--third) 0%,
+      var(--color--secondary--dark) 100%
+    );
+  }
+  .avatar__wrapper {
+    --space: calc(var(--border-radius) * 2);
+    width: calc(var(--avatar-width) - var(--space) - var(--padding--xxs) - var(--padding--xxs));
+    height: calc(var(--avatar-width) - var(--space) - var(--padding--xxs) - var(--padding--xxs));
+    top: var(--padding--xxs);
+    left: var(--padding--xxs);
+    position: absolute;
+    border-radius: 100%;
+    overflow: hidden;
+    z-index: 1;
+    border: var(--border-radius) solid var(--color--background);
+
+    img {
+      height: 100%;
+      left: 0;
+    }
+  }
+}

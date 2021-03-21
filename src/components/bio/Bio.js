@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ColumnLayout, RowLayout } from "../../global/Layout";
+import { ColumnLayout, distributions, RowLayout } from "../../global/Layout";
 import { range } from "../../global/utils";
 import {
   getBasicUserData,
@@ -11,6 +11,7 @@ import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import actions from "../../global/store/actions";
 import "./Bio.scss";
+import Avatar from "../avatar/Avatar";
 
 function Bio({ scroll }) {
   const [translate, setTranslate] = useState(-500);
@@ -98,9 +99,14 @@ function Bio({ scroll }) {
 
   const _renderSidebar = () => {
     return (
-      <ColumnLayout className="sidebar__container">
-        <img src={`${process.env.PUBLIC_URL}/images/avatar.jpg`} alt="avatar" />
-        {_showName() && _renderBasicInfo()}
+      <ColumnLayout
+        distribution={distributions.SPACED}
+        className="sidebar__container"
+      >
+        <div className="sidebar__avatar">
+          <Avatar />
+          {_showName() && _renderBasicInfo()}
+        </div>
         {_showHobbies() && _renderHobbies()}
       </ColumnLayout>
     );
@@ -214,7 +220,7 @@ function Bio({ scroll }) {
     >
       <RowLayout>
         {_renderSidebar()}
-        <ColumnLayout>
+        <ColumnLayout distribution={distributions.SPACED}>
           {_renderInfo()}
           {_showSkills() && _renderKnowledge()}
           {_showLanguages() && _renderLanguages()}

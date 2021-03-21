@@ -1,19 +1,24 @@
 .bio__container {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--padding--xxxl));
   margin: var(--padding--xxxl) 0;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    flex: 1;
+  }
 
   .sidebar__container {
-    width: 500px;
-    height: 100vh;
-    min-height: 900px;
     position: relative;
+    flex: 1;
 
-    img {
-      margin-top: var(--padding--m);
-      margin-left: calc(var(--padding--xl) * -1);
-      width: calc(500px + var(--padding--xl));
+    .sidebar__avatar {
       transition: all linear 300ms;
       transform: translateX(var(--translate));
+
+      .avatar__container {
+        margin: var(--padding--m) auto;
+      }
     }
 
     h1 {
@@ -21,7 +26,7 @@
     }
 
     .sidebar__info {
-      width: 300px;
+      width: 400px;
 
       tr {
         td {
@@ -40,7 +45,6 @@
     }
 
     .hobbies {
-      margin-top: var(--padding--xxxl);
 
       .hobbies__container {
         display: grid;
@@ -56,8 +60,7 @@
   .knowledge,
   .languages {
     text-align: justify;
-    margin: var(--padding--m) var(--padding--xl);
-    margin-top: var(--padding--xxxl);
+    margin-left: var(--padding--xxxl);
     transform: translateY(var(--translate--about));
     opacity: var(--opacity--about);
     transition: all linear 300ms;
@@ -113,8 +116,8 @@
   }
 }
 .decorator {
-  width: 70px;
-  height: 5px;
+  width: 40px;
+  height: 2px;
   background: var(--color--third);
 }
 .chip {

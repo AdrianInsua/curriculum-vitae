@@ -1,0 +1,47 @@
+.certs__wrapper {
+  padding-top: var(--padding--xxl);
+  height: 100vh;
+}
+
+.certs__container {
+  padding-top: var(--padding--xxl);
+
+  .cert-card {
+    width: 40%;
+    border: 1px solid var(--color--light);
+    padding: var(--padding--xs);
+    border-radius: 4px;
+
+    > .column {
+      flex: 1;
+    }
+
+    img {
+      height: 290px;
+      margin-right: var(--padding--m);
+      border-radius: 4px;
+    }
+    .description {
+      font-style: italic;
+      color: var(--color--medium);
+      margin: var(--padding--m) 0;
+    }
+
+    a {
+      color: var(--font-color);
+      text-decoration: none;
+      font-weight: bold;
+      padding: var(--padding--xs) var(--padding--m);
+      border: 1px solid var(--color--dark);
+      border-radius: 4px;
+
+      &:hover{
+        color: var(--color--secondary--dark);
+        border-color: var(--color--secondary--dark);
+      }
+    }
+    .link {
+      align-self: flex-end
+    }
+  }
+}
